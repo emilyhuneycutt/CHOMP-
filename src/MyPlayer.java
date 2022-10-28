@@ -15,6 +15,8 @@ public class MyPlayer {
             for(int y=0; y<=3; y++){
                 for(int t=0;t<=3;t++){
                     if(i>=y && i>=t && y>=t){
+
+
                         System.out.println("Board:"+i+","+y+","+t);
                         ResultBoard(i,y,t);
                     }
@@ -27,13 +29,31 @@ public class MyPlayer {
     }
     public void ResultBoard(int i, int j, int t){
         boolean u;
+        int t1 = t;
+        int i1 = i;
+        int j1 = j;
         for(int k = t-1; k>=0; k--){
            // if(j = )
-            System.out.println("**"+i+","+j+","+k);
+            System.out.println("r1:  "+i+","+j+","+k+" ("+(k)+",2)");
 
         }
         for(int q = j-1;q>=0; q--){
-            System.out.println(i+","+q+","+t);
+            if(t > q){
+                t=q;
+            }
+            System.out.println("r2:  "+i+","+q+","+t+" ("+(q)+",1)");
+
+        }
+
+        t = t1;
+        for(int i2= i-1; i2 >= 1; i2--){
+            if(j > i2){
+                j = i2;
+            }
+            if(t >= j){
+                t = j;
+            }
+            System.out.println("r3:  "+i2+","+j+","+(t)+" ("+(i2)+",0)");
         }
 
     }
